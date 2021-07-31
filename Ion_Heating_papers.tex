@@ -1,0 +1,116 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,graphicx,gensymb}
+\graphicspath{ {Image/} }
+\addtolength{\evensidemargin}{-.5in}
+\addtolength{\oddsidemargin}{-.5in}
+\addtolength{\textwidth}{0.8in}
+\addtolength{\textheight}{0.8in}
+\addtolength{\topmargin}{-.4in}
+\newtheoremstyle{quest}{\topsep}{\topsep}{}{}{\bfseries}{}{ }{\thmname{#1}\thmnote{ #3}.}
+\theoremstyle{quest}
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{question}{Question}
+\newtheorem*{exercise}{Exercise}
+\newtheorem*{challengeproblem}{Challenge Problem}
+\newcommand{\name}{%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Probing the Mechanisms behind Fast Ion heating in Low Energy
+}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\hw}{%%%%%%%%%%%%%%%%%%%%
+%%Homework%%%%%%%%%
+%% 2 %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+2
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\vspace{-50pt}
+\Huge \name
+\\\vspace{20pt}
+\huge BaPSL \hfill Background \hw}
+\author{%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Jesus Javier Serrano}
+\date{\today}
+\pagestyle{myheadings}
+\markright{\name\hfill Background \hw\qquad\hfill}
+
+%% If you want to define a new command, you can do it like this:
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sc}[1]{-\frac{\hbar ^2}{2m} \nabla^2#1 + V(\vec{x}))#1 = -i\hbar \frac{\partial #1}{\partial t}}
+\newcommand{\ScxE}[1]{-\frac{\hbar ^2}{2m} \nabla^2#1 + V(\vec{x}))#1 = E#1}
+\newcommand{\ScxEo}[1]{-\frac{\hbar ^2}{2m} \nabla^2#1 = E#1}
+\newcommand{\Prdf}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ScPrdf}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+%% If you want to use a function like ''sin'' or ''cos'', you can do it like this
+%% (we probably won't have much use for this)
+% \DeclareMathOperator{\sin}{sin}   %% just an example (it's already defined)
+
+
+\begin{document}
+\maketitle
+
+\section{Prologue}
+~~ In the quest for creating the viable nuclear fusion reactor which our species can use to power our electrical world, researchers must first understand the mechanisms that define the boundaries and constraints of the reactor. The reactor design will be based upon one of the two following concepts: magnetically confined plasmas or Intertially confined plasmas. Magnetically confined plasmas use strong magnetic fields to contain a plasma of different particle species that is continuously ignited, into an enclosed volume. The plasma will be heated using perturbations induced by EM waves, density gradients, etc. to induce higher collision frequencies and force particles to fuse(sauce?). Inertially confined plasmas are ignited and undergo nuclear fusion within a short period of time by bombarding a tube of tritium isotopes with high intensity laser beams.\\
+
+This report will focus on experiments that examine phenomena near the wall of magnetically confined plasmas. These experiments use different setups which range from controlled laboratory equipment such as linear plasma devices, tokamaks, etc., and natural phenomena observed in astronomy such as the heating mechanisms present in space plasmas. We will examine the theory, setup, results, and author's conclusions in order to gain a better understanding of Fast Ion heating within classically forbidden frequencies (sauce?).\\
+
+\section{Preliminary Investigation}
+\subsection{What's a Plasma?}
+~~Plasma is known as the fourth highest state of matter where there is more energy in the particles of a plasma than there are in particles of a gas. Plasma particles tend to have their atoms fully ionized with their electrons ejected, both ions and electrons have an escape velocity that can be defined by a Maxwellian distribution, for particles near the center of a plasma column. A proper defintion for a plasma is provided by Chen in his book on Intro to Plasma Physics: "a quasineutral gas of charged and neutral particles which exhibits a collective behavior." Chen then provides three contraints for a plasma:
+\begin{enumerate}
+	\item Debye Length is MUCH SMALLER than the characteristic length of the system of particles. $\lambda_D << L$
+	\item There must be a LARGE number of particles in the debye shield. $N_D>>1$
+	\item The plasma wave oscillation frequency must be greater than the particle collision frequency (Plasma oscillations occur much faster than particle interactions). $\omega > \frac{1}{\tau}$
+\end{enumerate}
+\subsection{What's a Plasma Wave?}
+(sauce?)
+\subsection{Alfven Waves}
+Ions in a plasma exhibit a collective behavior which can be exploited to heat up the plasma. If an EM wave were to be injected into the plasma with $\vec{k} \parallel \vec{B_o}$ where $\vec{k}$ is the direction of propogation for the EM wave and $B_o$ is the applied magnetic field used to confine the plasma, then a mode is present upon the plasma where the particles start to osillate. With this EM wave, the applied magnetic field will perturbed and produce and spatially oscillating field line. With the ions of the plasma experiencing a drift velocity from the perturbed $B$, the plasma fluid will begin to oscillate at $\pi/2$ out of phase to the field lines. The plasma will act as a massive string resulting in a dispersion relation of $\frac{\omega}{k} = \frac{B_o}{\left( \mu_o \rho\right)}$ where $\mu_o$ is the vacuum permeability and $\rho$ is the mass density of the plasma.
+\subsection{Fast Ions}
+\subsection{Nuclear Cross Sections}
+To start this section we must define one literature length scale which we shall use throughout this section. Enter De-Broglen. With D-B wavelengths we may define $\lambda = \frac{h}{p} ~ 10^{-10} cm$. The reaction rate is dependent on the center of mass energy which is defined to be:
+\begin{align}
+E_{com} = \frac{1}{2} m_r |\vec{v_1} - \vec{v_2}|^2
+\end{align}
+Now we shall define a simple and ideal case for cross-section calculations ignoring non-resonant phenomena:
+\begin{align}
+\omega(E) = 4 \pi \delta^@ K P(0)\\
+= 4 \pi \lambda^2 K \exp((-\frac{E_G}{E})^\frac{1}{2}) 
+\end{align}
+Where in this case k is a dimensionless constant which is dependent on E. Note that:
+\begin{align}
+4 \pi \lambda^2 = \frac{2 \pi \hbar}{m_r E_{com}} = 2000 \text{Barns}\frac{KeV}{E_{com}}
+\end{align}
+1 Barn is defined to be about $10^{-24} cm^2$. So in order to calculate the cross-section in terms of energy we have the following equation:
+\begin{align}
+\omega(E) = \frac{1}{E} S(E) \exp(-(\frac{E_{com}}{E})^\frac{1}{2})
+\end{align}
+And thus the reaction time is defined to be $t = \frac{1}{\omega v n}$, and the rate per volume is defined as $R_{12} = n_1 n_2 \omega v$.\\
+Now we may calculate the thermal average of the particle soup within a star.
+\begin{align*}
+<\omega v> = \int_0^{\infty} v_r \omega(v_{r}) P(v_r) dv_r\\
+\end{align*}
+Now the Maxwellian distribution may be applied in order define the probability function for the thermal average, note that this classical approximation is significantly precise in calculating the energy distribution.
+\begin{align*}
+P(v_r)dv_r = (\frac{m_r}{2\pi kT})^{\frac{3}{2}} \exp(\frac{-m_r v_r^2}{2 kT})d^3v_r
+\end{align*}
+We shall define the following parameters as such: $E = \frac{1}{2} m_r v_r^2, dE = m_r v_r dv_r, 4\pi v_r^3 dv_r = \frac{8\pi}{m_r^2} EdE$. Then we may define the following using algebraic derivation:
+\begin{align}
+\frac{1}{(kT)^{\frac{3}{2}}} (\frac{8}{\pi m_r})^{\frac{1}{2}} \int_{0}^{\infty} S(E) \exp(-\frac{E}{kT} - (\frac{E_G}{E})^{\frac{1}{2}}) dE.
+\end{align}
+Notice that at the far end of the interval the Maxwellian distribution provides a low probability due to the fact that high energy particles almost improbable to exist in a closed system, and at the low end of the interval we also gain a low probability due to the fact that low energy particles don't have enough energy to cross the binding potential barrier.\\
+A great quality of the $S(E)$ parameter that we may exploit is that it's mainly constant throughout the interval with negligible variance, thus we may pull it out of the integral. Now the main integrand that we must focus on is the exponential function $e^{-f}$ where $f = \frac{E}{kT} + (\frac{E_G}{E})^{\frac{1}{2}}$. Thus knowing that the exponential function is dependent on f, we may assume that the critical points of this function is defined by f. Then:
+\begin{align*}
+\frac{df}{dE} = 0 = \frac{1}{kT} - \frac{1}{2}(\frac{E_G^\frac{1}{3}}{E_o})^{\frac{3}{2}}
+\end{align*}
+And so the peak energy level where there is a maximum probability density is: \begin{align}
+E_o = E_G^{\frac{1}{3}}(\frac{kT}{2})^{\frac{2}{3}}
+\end{align}
+Now when we deal with the full integrand we are provided a difficult function to integrate, thus we may simplify our problem by using the taylor expansion about the peak energy. With this such approximation we define the thermal approximation to be:(hint: a gaussian integral with a constant)
+\end{document}
