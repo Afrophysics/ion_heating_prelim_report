@@ -21,7 +21,7 @@ Probing the Mechanisms behind Fast Ion heating in Low Energy
 %%Homework%%%%%%%%%
 %% 2 %%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-2
+1
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,7 +71,40 @@ This report will focus on experiments that examine phenomena near the wall of ma
 \subsection{What's a Plasma Wave?}
 (sauce?)
 \subsection{Alfven Waves}
-Ions in a plasma exhibit a collective behavior which can be exploited to heat up the plasma. If an EM wave were to be injected into the plasma with $\vec{k} \parallel \vec{B_o}$ where $\vec{k}$ is the direction of propogation for the EM wave and $B_o$ is the applied magnetic field used to confine the plasma, then a mode is present upon the plasma where the particles start to osillate. With this EM wave, the applied magnetic field will perturbed and produce and spatially oscillating field line. With the ions of the plasma experiencing a drift velocity from the perturbed $B$, the plasma fluid will begin to oscillate at $\pi/2$ out of phase to the field lines. The plasma will act as a massive string resulting in a dispersion relation of $\frac{\omega}{k} = \frac{B_o}{\left( \mu_o \rho\right)}$ where $\mu_o$ is the vacuum permeability and $\rho$ is the mass density of the plasma.
+~~Ions in a plasma exhibit a collective behavior which can be exploited to heat up the plasma. If an EM wave were to be injected into the plasma with $\vec{k} \parallel \vec{B_o}$ where $\vec{k}$ is the direction of propogation for the EM wave and $B_o$ is the applied magnetic field used to confine the plasma, then a mode is present upon the plasma where the particles start to osillate. With this EM wave, the applied magnetic field will perturb and produce a spatially oscillating field line. With the ions of the plasma experiencing a drift velocity from the perturbed $B$, the plasma fluid will begin to oscillate at $\pi/2$ out of phase to the field lines. The plasma will act as a massive string resulting in a dispersion relation of $\frac{\omega}{k} = \frac{B_o}{\left( \mu_o \rho\right)}$ where $\mu_o$ is the vacuum permeability and $\rho$ is the mass density of the plasma.\\
+
+To understand the behavior of the individual particles in the plasma let us first derive the dynamics of the field. With an applied EM wave, with known field parameters, and provided that the wave will perturb the internal magnetic field of the plasma, then we can use Faraday's law of induction:\\
+\begin{align*}
+	\nabla \times\vec{E_1} = \Prdf{\vec{B}}{t}
+\end{align*}
+where $E_1$ is the electric field of the wave and $B$ is the total magnetic field which includes the initial field $B_o$. The next few steps will include some Fourier transformations, and are all followed by Chen's examples. Let us find the curl of this relation:
+\begin{align}
+	\nabla \times \nabla \times \vec{E_1} = - \Prdf{}{t} \nabla \times \vec{B}
+\end{align}
+Recall the product rules for vectors and simplify the LHS:
+\begin{align*}
+	\nabla \left(\nabla \cdot E_1 \right) - \nabla^2 E_1 = -  \Prdf{}{t} \nabla \times \vec{B}
+\end{align*}
+For the RHS we will apply Ampere's Maxwell law:
+\begin{align*}
+	\nabla \left(\nabla \cdot E_1 \right) - \nabla^2 E_1 = -  \Prdf{}{t} \left(\mu_o \vec{J} + \frac{1}{c^2}\Prdf{\vec{E}}{t} \right)
+\end{align*}
+~~Here's where it gets interesting. Since the only component of $\vec{B}$ that is changing is the EM wave contribution, the only electric field and current density that we have to worry about in the RHS is of that resulting from the EM wave. Also, the current density produced may be tricky to verify for a 3-D experiment. However, the only flow we need to worry about is that which is parallel to the polarization of $E_1$. Note that the divergence operator will be at maximum for the direction parallel to the polarization of $E_1$. However, the EM wave does not vary in respect to the perpendicular plane of the EM wave (ie. perpendicular to $k$). This means that there is no variation along the polarization of direction of the EM wave. Thus, the divergence of $E_1$ is zero. Then we are left with:
+\begin{align*}
+	-\nabla^2 \vec{E_1} = -\mu_o \Prdf{\vec{J_1}}{t} -\frac{1}{c^2}\ScPrdf{\vec{E_1}}{t}
+\end{align*}
+~~Suppose the EM wave is polarized along some direction $\hat{e_1}$. Then, for our relation we find that the current density must flow along $\hat{e_1}$ as well. The current density is defined as the collective charge flow within a specific infinitesimal volume: $\vec{J_1} = n_o e \left(v_i - v_e \right) \hat{e_1}$. $n_o$ is the particle number density, $e$ is the electron charge, $v_i$ and $v_e$ are the velocities of ions and electrons, respectively, along the $\hat{e_1}$ direction. Now we have:
+\begin{align}
+	\left(-\nabla^2 + \frac{1}{c^2}\ScPrdf{}{t}\right) \vec{E_1} = -\mu_o \Prdf{}{t}n_o e \left(v_i - v_e \right) \hat{e_1}
+\end{align}
+Let us apply a fourier transformation onto this equation. For our EM wave we should note that $\nabla -> i\vec{k}$ and $\Prdf{}{t} -> -i\omega$. Then:
+\begin{align}
+\left(k^2 - \frac{\omega^2}{c^2}\right) \vec{E_1} = i \omega\mu_o n_o e \left(v_i - v_e \right) \hat{e_1}
+\end{align}
+Now let us clean up some terms by multiplying $-\epsilon_o c^2$ on both sides. We will have: 
+\begin{align}
+\epsilon_o \left(\omega^2 - c^2 k^2\right) \vec{E_1} = -i \omega n_o e \left(v_i - v_e \right) \hat{e_1}
+\end{align}
 \subsection{Fast Ions}
 \subsection{Nuclear Cross Sections}
 To start this section we must define one literature length scale which we shall use throughout this section. Enter De-Broglen. With D-B wavelengths we may define $\lambda = \frac{h}{p} ~ 10^{-10} cm$. The reaction rate is dependent on the center of mass energy which is defined to be:
